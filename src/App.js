@@ -10,6 +10,14 @@ function App() {
   const manejarClic = () =>{
     setNumClics(numClics + 1);//Sumamos uno cuando debemos clic y se lo asignamos a la función setNumClics
   };
+  const restarUno = () => {
+    if (numClics >0) {
+      setNumClics(numClics-1);
+    }else{
+      alert('No se puede restar');
+    }
+    
+  };
   const reiniciarContador = () => {
     setNumClics(0);
   };
@@ -31,9 +39,14 @@ function App() {
           esBotonDeClic={true}
           manejarClic={manejarClic} />
         <Boton 
+        texto='Restar Uno'
+        esBotonDeClic={true}
+        manejarClic={restarUno} />
+        <Boton 
           texto='Reiniciar'
           esBotonDeClic={false}
           manejarClic={reiniciarContador} />
+        
       </div>
     </div>
   );
